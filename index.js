@@ -215,35 +215,31 @@ const filterAuthorAndPages = (authorName, pages)=>{
 // let arrayOfBooks = filterAuthorAndPages("harper lee", 400);
 // console.log(arrayOfBooks);
 
-
-
-
-
 // =========================================================================
 
 // Task 6 (HARD) (Optional)
-// const countriesArray = [
-//   { name: 'United States', population: 331002651 },
-//   { name: 'China', population: 1444216107 },
-//   { name: 'India', population: 1380004385 },
-//   { name: 'Brazil', population: 212559417 },
-//   { name: 'Russia', population: 145934462 },
-//   { name: 'Japan', population: 126476461 },
-//   { name: 'Mexico', population: 128932753 },
-//   { name: 'Germany', population: 83783942 },
-//   { name: 'France', population: 65273511 },
-//   { name: 'United Kingdom', population: 67886011 },
-//   { name: 'Italy', population: 60461826 },
-//   { name: 'Canada', population: 37742154 },
-//   { name: 'South Korea', population: 51269185 },
-//   { name: 'Australia', population: 25499884 },
-//   { name: 'Spain', population: 46754778 },
-//   { name: 'Saudi Arabia', population: 34813871 },
-//   { name: 'Nigeria', population: 206139587 },
-//   { name: 'South Africa', population: 59308690 },
-//   { name: 'Argentina', population: 45195777 },
-//   { name: 'Egypt', population: 102334404 }
-// ];
+const countriesArray = [
+  { name: 'United States', population: 331002651 },
+  { name: 'China', population: 1444216107 },
+  { name: 'India', population: 1380004385 },
+  { name: 'Brazil', population: 212559417 },
+  { name: 'Russia', population: 145934462 },
+  { name: 'Japan', population: 126476461 },
+  { name: 'Mexico', population: 128932753 },
+  { name: 'Germany', population: 83783942 },
+  { name: 'France', population: 65273511 },
+  { name: 'United Kingdom', population: 67886011 },
+  { name: 'Italy', population: 60461826 },
+  { name: 'Canada', population: 37742154 },
+  { name: 'South Korea', population: 51269185 },
+  { name: 'Australia', population: 25499884 },
+  { name: 'Spain', population: 46754778 },
+  { name: 'Saudi Arabia', population: 34813871 },
+  { name: 'Nigeria', population: 206139587 },
+  { name: 'South Africa', population: 59308690 },
+  { name: 'Argentina', population: 45195777 },
+  { name: 'Egypt', population: 102334404 }
+];
 
 // These are countries our travel app can show flights to. 
 
@@ -256,3 +252,9 @@ const filterAuthorAndPages = (authorName, pages)=>{
 // Parameters: (allCountries seenCountries, maxPopulation)
 
 // arguments: (countriesArray, ["United States", "Brazil", "egypt", "argentina"], 70000000) 
+const filterCountries = (allCountries, seenCountries, maxPopulation)=>{
+    return allCountries.filter(country =>
+     !seenCountries.includes(country.name) && country.population <= maxPopulation);
+};
+const newFilteredCountries = filterCountries(countriesArray, ["United States", "Brazil", "egypt", "argentina"], 70000000)
+console.log(newFilteredCountries);
